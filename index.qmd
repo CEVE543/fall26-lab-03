@@ -162,7 +162,8 @@ fig
 ```
 
 The dashed lines show the range you would expect from white noise (independent draws): $\pm 1.96/\sqrt{n}$.
-The autocorrelations all fall inside this band, so year-to-year persistence is not a concern for this series.
+All but one of the autocorrelations fall inside this band.
+Lag 6 sits just outside it, about what you would expect by chance among 15 lags from independent years, so year-to-year persistence is not a concern for this series.
 If they were large, the plain bootstrap would underestimate uncertainty because resampling individual years destroys the dependence structure.
 
 ## Exercises
