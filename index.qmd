@@ -173,29 +173,11 @@ If they were large, the plain bootstrap would underestimate uncertainty because 
 **Your answer:** How does the posterior mean compare to the MLE?
 Why are they so similar here, and when would you expect them to differ?
 
-::: {.answer}
-
-```{julia}
-#| echo: false
-# Your code here
-```
-
-With 88 years of data the likelihood dominates the prior, so the posterior mean is nearly identical to the MLE.
-They would differ more with a stronger prior or a shorter record.
-
-:::
 
 ### Compare the 50-year return level
 
 **Your answer:** Compute the 50-year return level (the temperature exceeded once in 50 years on the cold side) from the MLE fit, and give bootstrap and Bayesian 95% intervals for it.
 
-::: {.answer}
-
-```{julia}
-# Your code here
-```
-
-:::
 
 ### Does the Normal fit the tail?
 
@@ -204,16 +186,6 @@ The observed coldest events fall below the fitted curve.
 What does this tell you about the Normal as a model for extreme cold in Houston?
 Why might the coldest winters be colder than a Normal predicts?
 
-::: {.answer}
-
-The Normal has thin tails: it assigns very low probability to values far from the mean.
-The coldest observed winters fall below the fitted curve, so the Normal underestimates the probability of extreme cold.
-
-The coldest winters in Houston are driven by Arctic cold air outbreaks, a different physical process from the year-to-year variability that produces the bulk of the record.
-A Normal fitted to the whole record sees one population where the data contain two.
-Extreme value theory (week 4) provides distributions with heavier tails that can accommodate this.
-
-:::
 
 ### Why is the bootstrap band wider than the Bayesian band?
 
@@ -222,29 +194,9 @@ The bootstrap draws spread wider than the Bayesian draws, especially in the tail
 Why?
 Hint: think about what each method holds fixed and what it varies.
 
-::: {.answer}
-
-The Bayesian approach here holds $\sigma$ fixed at $\hat\sigma$ and varies only $\mu$.
-The bootstrap refits both $\mu$ and $\sigma$ on each resample, so it picks up uncertainty in both parameters.
-
-A resample that happens to include more cold years gets a larger $\hat\sigma$, which pushes the tail further.
-The Bayesian band is artificially narrow because it treats $\hat\sigma$ as known.
-A fuller Bayesian model that puts a prior on $\sigma$ as well would be wider and closer to the bootstrap.
-
-:::
 
 ### Wrapping up
 
 **Your answer:** A city planner asks you: how rare is a winter as cold as 2021?
 Give a point estimate and a plausible range, and explain in one or two sentences why the range matters more than the point estimate.
 
-::: {.answer}
-
-```{julia}
-# Your code here
-```
-
-The MLE says the 2021 freeze is roughly a once-in-several-decades event, but the confidence interval spans a wide range.
-The planner cannot distinguish "once in 20 years" from "once in 100 years" with this record and this model, and those two answers lead to very different decisions about infrastructure investment.
-
-:::
